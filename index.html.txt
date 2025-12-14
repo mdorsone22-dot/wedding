@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mariage de Jimmy & Djelda</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #001f3f 0%, #003d7a 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #001f3f 0%, #003d7a 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header::before {
+            content: '💍';
+            font-size: 60px;
+            display: block;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #FFD700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #FFD700;
+            font-style: italic;
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .info-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-left: 5px solid #FFD700;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+        }
+
+        .info-item {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: start;
+            gap: 15px;
+        }
+
+        .info-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .icon {
+            font-size: 24px;
+            min-width: 30px;
+        }
+
+        .info-text h3 {
+            color: #001f3f;
+            margin-bottom: 8px;
+            font-size: 1.2em;
+        }
+
+        .info-text p {
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .form-section {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            border: 2px solid #001f3f;
+            margin-bottom: 25px;
+        }
+
+        .form-section h2 {
+            color: #001f3f;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 1.8em;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #001f3f;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #001f3f;
+        }
+
+        .button {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #001f3f;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-top: 10px;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        .button:active {
+            transform: translateY(0);
+        }
+
+        .payment-section {
+            background: #fffbea;
+            padding: 25px;
+            border-radius: 10px;
+            border: 2px solid #FFD700;
+            text-align: center;
+        }
+
+        .payment-section h3 {
+            color: #001f3f;
+            margin-bottom: 15px;
+        }
+
+        .email-box {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            color: #001f3f;
+            font-weight: bold;
+            margin: 15px 0;
+            border: 2px solid #001f3f;
+        }
+
+        .stats {
+            background: linear-gradient(135deg, #001f3f 0%, #003d7a 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+            margin-top: 25px;
+        }
+
+        .stats h2 {
+            color: #FFD700;
+            margin-bottom: 20px;
+        }
+
+        .stat-number {
+            font-size: 3em;
+            font-weight: bold;
+            color: #FFD700;
+        }
+
+        .qr-section {
+            text-align: center;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            margin-top: 25px;
+        }
+
+        .qr-section h3 {
+            color: #001f3f;
+            margin-bottom: 20px;
+        }
+
+        #qrcode {
+            display: inline-block;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            display: none;
+            text-align: center;
+            border: 2px solid #c3e6cb;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .content {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Jimmy & Djelda</h1>
+            <p class="subtitle">Vous invitent à célébrer leur union</p>
+        </div>
+
+        <div class="content">
+            <div class="info-section">
+                <div class="info-item">
+                    <div class="icon">📅</div>
+                    <div class="info-text">
+                        <h3>Cérémonie</h3>
+                        <p><strong>Heure :</strong> 15h30</p>
+                        <p><strong>Adresse :</strong> 9977 Bd Saint-Michel, Montréal-Nord, QC H1H 5G7</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="icon">🎉</div>
+                    <div class="info-text">
+                        <h3>Réception</h3>
+                        <p><strong>Adresse :</strong> 4371 Bd Grande-Prairie, Saint-Léonard, QC H1R 3H2</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>✨ Confirmer votre présence</h2>
+                <form id="confirmationForm">
+                    <div class="form-group">
+                        <label for="nom">Nom complet *</label>
+                        <input type="text" id="nom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Courriel</label>
+                        <input type="email" id="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="nombre">Nombre de personnes *</label>
+                        <input type="number" id="nombre" min="1" value="1" required>
+                    </div>
+                    <button type="submit" class="button">Confirmer ma présence</button>
+                </form>
+                <div id="successMessage" class="success-message">
+                    ✓ Merci ! Votre présence est confirmée.
+                </div>
+            </div>
+
+            <div class="payment-section">
+                <h3>💳 Paiement par Interac</h3>
+                <p>Pour participer aux frais, veuillez envoyer votre contribution par Interac à :</p>
+                <div class="email-box">jimmymathieu90@gmail.com</div>
+                <p style="color: #666; font-size: 14px; margin-top: 10px;">
+                    Les informations de paiement vous seront également envoyées par courriel après confirmation.
+                </p>
+            </div>
+
+            <div class="stats">
+                <h2>Participants confirmés</h2>
+                <div class="stat-number" id="totalGuests">0</div>
+                <p style="margin-top: 10px; color: #FFD700;">personnes</p>
+            </div>
+
+            <div class="qr-section">
+                <h3>📱 Code QR du site</h3>
+                <p style="margin-bottom: 20px; color: #666;">Scannez pour accéder au site</p>
+                <div id="qrcode"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Générer le code QR avec l'URL actuelle
+        new QRCode(document.getElementById("qrcode"), {
+            text: window.location.href,
+            width: 200,
+            height: 200,
+            colorDark: "#001f3f",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
+
+        // Gestion des données en mémoire
+        let guests = [];
+        let totalCount = 0;
+
+        // Charger les données au démarrage
+        function loadData() {
+            const saved = localStorage.getItem('weddingGuests');
+            if (saved) {
+                guests = JSON.parse(saved);
+                totalCount = guests.reduce((sum, g) => sum + g.nombre, 0);
+                updateStats();
+            }
+        }
+
+        // Sauvegarder les données
+        function saveData() {
+            localStorage.setItem('weddingGuests', JSON.stringify(guests));
+        }
+
+        // Mettre à jour les statistiques
+        function updateStats() {
+            document.getElementById('totalGuests').textContent = totalCount;
+        }
+
+        // Gérer la soumission du formulaire
+        document.getElementById('confirmationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nom = document.getElementById('nom').value;
+            const email = document.getElementById('email').value;
+            const nombre = parseInt(document.getElementById('nombre').value);
+
+            // Ajouter le nouvel invité
+            guests.push({
+                nom: nom,
+                email: email,
+                nombre: nombre,
+                date: new Date().toISOString()
+            });
+
+            totalCount += nombre;
+            saveData();
+            updateStats();
+
+            // Afficher le message de succès
+            document.getElementById('successMessage').style.display = 'block';
+            
+            // Réinitialiser le formulaire
+            this.reset();
+
+            // Masquer le message après 5 secondes
+            setTimeout(() => {
+                document.getElementById('successMessage').style.display = 'none';
+            }, 5000);
+        });
+
+        // Charger les données au démarrage
+        loadData();
+    </script>
+</body>
+</html>
