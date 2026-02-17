@@ -5,36 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mariage de Jimmy & Djelda</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Georgia', serif;
             background: linear-gradient(135deg, #001f3f 0%, #003d7a 100%);
             min-height: 100vh;
             padding: 20px;
         }
-
         .container {
             max-width: 800px;
             margin: 0 auto;
             background: white;
             border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
             overflow: hidden;
         }
-
         .header {
             background: linear-gradient(135deg, #001f3f 0%, #003d7a 100%);
             color: white;
             padding: 40px 30px;
             text-align: center;
-            position: relative;
         }
-
         .header::before {
             content: '💍';
             font-size: 60px;
@@ -42,29 +33,13 @@
             margin-bottom: 20px;
             animation: float 3s ease-in-out infinite;
         }
-
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
         }
-
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            color: #FFD700;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .subtitle {
-            font-size: 1.2em;
-            color: #FFD700;
-            font-style: italic;
-        }
-
-        .content {
-            padding: 40px 30px;
-        }
-
+        h1 { font-size: 2.5em; margin-bottom: 10px; color: #FFD700; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .subtitle { font-size: 1.2em; color: #FFD700; font-style: italic; }
+        .content { padding: 40px 30px; }
         .info-section {
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             border-left: 5px solid #FFD700;
@@ -72,34 +47,11 @@
             margin-bottom: 25px;
             border-radius: 10px;
         }
-
-        .info-item {
-            margin-bottom: 20px;
-            display: flex;
-            align-items: start;
-            gap: 15px;
-        }
-
-        .info-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .icon {
-            font-size: 24px;
-            min-width: 30px;
-        }
-
-        .info-text h3 {
-            color: #001f3f;
-            margin-bottom: 8px;
-            font-size: 1.2em;
-        }
-
-        .info-text p {
-            color: #333;
-            line-height: 1.6;
-        }
-
+        .info-item { margin-bottom: 20px; display: flex; align-items: start; gap: 15px; }
+        .info-item:last-child { margin-bottom: 0; }
+        .icon { font-size: 24px; min-width: 30px; }
+        .info-text h3 { color: #001f3f; margin-bottom: 8px; font-size: 1.2em; }
+        .info-text p { color: #333; line-height: 1.6; }
         .form-section {
             background: white;
             padding: 30px;
@@ -107,30 +59,10 @@
             border: 2px solid #001f3f;
             margin-bottom: 25px;
         }
-
-        .form-section h2 {
-            color: #001f3f;
-            margin-bottom: 20px;
-            text-align: center;
-            font-size: 1.8em;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            color: #001f3f;
-            font-weight: bold;
-        }
-
-        input[type="text"],
-        input[type="email"],
-        input[type="tel"],
-        input[type="number"],
-        select {
+        .form-section h2 { color: #001f3f; margin-bottom: 20px; text-align: center; font-size: 1.8em; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; color: #001f3f; font-weight: bold; }
+        input[type="text"], input[type="email"], input[type="tel"], input[type="number"], select {
             width: 100%;
             padding: 12px;
             border: 2px solid #ddd;
@@ -139,27 +71,10 @@
             transition: border-color 0.3s;
             font-family: 'Georgia', serif;
         }
-
-        input:focus,
-        select:focus {
-            outline: none;
-            border-color: #001f3f;
-        }
-
-        .phone-group {
-            display: flex;
-            gap: 10px;
-        }
-
-        .country-code {
-            width: 180px;
-            flex-shrink: 0;
-        }
-
-        .phone-number {
-            flex: 1;
-        }
-
+        input:focus, select:focus { outline: none; border-color: #001f3f; }
+        .phone-group { display: flex; gap: 10px; }
+        .country-code { width: 180px; flex-shrink: 0; }
+        .phone-number { flex: 1; }
         .button {
             background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
             color: #001f3f;
@@ -173,16 +88,9 @@
             transition: transform 0.2s, box-shadow 0.2s;
             margin-top: 10px;
         }
-
-        .button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
-        }
-
-        .button:active {
-            transform: translateY(0);
-        }
-
+        .button:hover { transform: translateY(-2px); box-shadow: 0 5px 20px rgba(255,215,0,0.4); }
+        .button:active { transform: translateY(0); }
+        .button:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
         .payment-section {
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             border-left: 5px solid #001f3f;
@@ -190,72 +98,16 @@
             border-radius: 10px;
             margin-bottom: 25px;
         }
-
-        .payment-section h3 {
-            color: #001f3f;
-            margin-bottom: 20px;
-            font-size: 1.5em;
-            text-align: center;
-        }
-
-        .payment-info {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            border: 2px solid #001f3f;
-            margin-bottom: 20px;
-        }
-
-        .price-box {
-            text-align: center;
-            margin-bottom: 25px;
-            padding: 20px;
-            background: #fffbea;
-            border-radius: 10px;
-            border: 2px solid #FFD700;
-        }
-
-        .price {
-            font-size: 2.5em;
-            color: #001f3f;
-            font-weight: bold;
-            margin: 10px 0;
-        }
-
-        .payment-detail {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            margin-bottom: 15px;
-        }
-
-        .payment-detail:last-child {
-            margin-bottom: 0;
-        }
-
-        .payment-icon {
-            font-size: 24px;
-            min-width: 30px;
-        }
-
-        .payment-text {
-            flex: 1;
-        }
-
-        .payment-label {
-            font-weight: bold;
-            color: #001f3f;
-            margin-bottom: 5px;
-        }
-
-        .payment-value {
-            color: #666;
-            font-size: 1.1em;
-        }
-
+        .payment-section h3 { color: #001f3f; margin-bottom: 20px; font-size: 1.5em; text-align: center; }
+        .payment-info { background: white; padding: 25px; border-radius: 10px; border: 2px solid #001f3f; margin-bottom: 20px; }
+        .price-box { text-align: center; margin-bottom: 25px; padding: 20px; background: #fffbea; border-radius: 10px; border: 2px solid #FFD700; }
+        .price { font-size: 2.5em; color: #001f3f; font-weight: bold; margin: 10px 0; }
+        .payment-detail { display: flex; align-items: center; gap: 15px; padding: 15px; background: #f8f9fa; border-radius: 8px; margin-bottom: 15px; }
+        .payment-detail:last-child { margin-bottom: 0; }
+        .payment-icon { font-size: 24px; min-width: 30px; }
+        .payment-text { flex: 1; }
+        .payment-label { font-weight: bold; color: #001f3f; margin-bottom: 5px; }
+        .payment-value { color: #666; font-size: 1.1em; }
         .email-address {
             color: #001f3f;
             font-weight: bold;
@@ -266,585 +118,340 @@
             display: inline-block;
             word-break: break-all;
         }
-
-        .warning-box {
-            background: #fff3cd;
-            border: 2px solid #ffc107;
-            border-radius: 8px;
-            padding: 15px;
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .warning-box strong {
-            color: #856404;
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        .warning-box p {
-            color: #856404;
-            font-size: 14px;
-            line-height: 1.6;
-        }
-
-        .success-message {
-            background: #d4edda;
-            color: #155724;
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 20px;
-            display: none;
-            text-align: center;
-            border: 2px solid #c3e6cb;
-        }
-
-        .admin-section {
-            background: linear-gradient(135deg, #001f3f 0%, #003d7a 100%);
-            color: white;
-            padding: 30px;
-            border-radius: 10px;
-            margin-top: 25px;
-            text-align: center;
-        }
-
-        .admin-section h2 {
-            color: #FFD700;
-            margin-bottom: 20px;
-            font-size: 1.8em;
-        }
-
-        .stat-number {
-            font-size: 3.5em;
-            font-weight: bold;
-            color: #FFD700;
-            margin: 10px 0;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .stat-box {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 15px;
-            border-radius: 10px;
-        }
-
-        .stat-box-number {
-            font-size: 2em;
-            font-weight: bold;
-            color: #FFD700;
-        }
-
-        .stat-box-label {
-            font-size: 0.9em;
-            color: #fff;
-            margin-top: 5px;
-        }
-
-        .guest-list {
-            background: white;
-            color: #001f3f;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
-            max-height: 400px;
-            overflow-y: auto;
-        }
-
-        .guest-item {
-            padding: 15px;
-            border-bottom: 1px solid #ddd;
-            position: relative;
-        }
-
-        .guest-item:last-child {
-            border-bottom: none;
-        }
-
-        .guest-item.pending {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding-left: 20px;
-        }
-
-        .guest-item.approved {
-            background: #d4edda;
-            border-left: 4px solid #28a745;
-            padding-left: 20px;
-        }
-
-        .guest-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .guest-name {
-            font-weight: bold;
-            color: #001f3f;
-            font-size: 1.1em;
-        }
-
-        .guest-status {
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 0.85em;
-        }
-
-        .status-pending {
-            background: #ffc107;
-            color: #856404;
-        }
-
-        .status-approved {
-            background: #28a745;
-            color: white;
-        }
-
-        .guest-count {
-            background: #FFD700;
-            color: #001f3f;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-            margin-left: 10px;
-        }
-
-        .guest-details {
-            margin-top: 8px;
-            color: #666;
-            font-size: 0.9em;
-            line-height: 1.6;
-        }
-
-        .guest-detail-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 4px;
-        }
-
-        .guest-detail-icon {
-            font-size: 14px;
-            min-width: 16px;
-        }
-
-        .action-buttons {
-            margin-top: 10px;
-            display: flex;
-            gap: 10px;
-        }
-
-        .approve-btn {
-            background: #28a745;
-            color: white;
-            padding: 8px 20px;
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: all 0.2s;
-        }
-
-        .approve-btn:hover {
-            background: #218838;
-            transform: translateY(-2px);
-        }
-
-        .delete-btn {
-            background: #dc3545;
-            color: white;
-            padding: 8px 20px;
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: all 0.2s;
-        }
-
-        .delete-btn:hover {
-            background: #c82333;
-            transform: translateY(-2px);
-        }
+        .warning-box { background: #fff3cd; border: 2px solid #ffc107; border-radius: 8px; padding: 15px; margin-top: 20px; text-align: center; }
+        .warning-box strong { color: #856404; display: block; margin-bottom: 8px; }
+        .warning-box p { color: #856404; font-size: 14px; line-height: 1.6; }
+        .success-message { background: #d4edda; color: #155724; padding: 15px; border-radius: 8px; margin-top: 20px; display: none; text-align: center; border: 2px solid #c3e6cb; }
+        .loading { text-align: center; padding: 20px; color: #001f3f; font-style: italic; display: none; }
+        .admin-section { background: linear-gradient(135deg, #001f3f 0%, #003d7a 100%); color: white; padding: 30px; border-radius: 10px; margin-top: 25px; text-align: center; }
+        .admin-section h2 { color: #FFD700; margin-bottom: 20px; font-size: 1.8em; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; margin-top: 20px; }
+        .stat-box { background: rgba(255,255,255,0.1); padding: 15px; border-radius: 10px; }
+        .stat-box-number { font-size: 2em; font-weight: bold; color: #FFD700; }
+        .stat-box-label { font-size: 0.9em; color: #fff; margin-top: 5px; }
+        .guest-list { background: white; color: #001f3f; padding: 20px; border-radius: 10px; margin-top: 20px; max-height: 500px; overflow-y: auto; }
+        .guest-item { padding: 15px; border-bottom: 1px solid #ddd; }
+        .guest-item:last-child { border-bottom: none; }
+        .guest-item.pending { background: #fff3cd; border-left: 4px solid #ffc107; padding-left: 20px; }
+        .guest-item.approved { background: #d4edda; border-left: 4px solid #28a745; padding-left: 20px; }
+        .guest-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 5px; }
+        .guest-name { font-weight: bold; color: #001f3f; font-size: 1.1em; }
+        .guest-status { padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.85em; }
+        .status-pending { background: #ffc107; color: #856404; }
+        .status-approved { background: #28a745; color: white; }
+        .guest-count { background: #FFD700; color: #001f3f; padding: 5px 15px; border-radius: 20px; font-weight: bold; margin-left: 5px; }
+        .guest-details { margin-top: 8px; color: #666; font-size: 0.9em; line-height: 1.6; }
+        .guest-detail-item { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+        .guest-detail-icon { font-size: 14px; min-width: 16px; }
+        .action-buttons { margin-top: 10px; display: flex; gap: 10px; flex-wrap: wrap; }
+        .approve-btn { background: #28a745; color: white; padding: 8px 20px; border: none; border-radius: 20px; cursor: pointer; font-weight: bold; transition: all 0.2s; }
+        .approve-btn:hover { background: #218838; transform: translateY(-2px); }
+        .delete-btn { background: #dc3545; color: white; padding: 8px 20px; border: none; border-radius: 20px; cursor: pointer; font-weight: bold; transition: all 0.2s; }
+        .delete-btn:hover { background: #c82333; transform: translateY(-2px); }
+        .firebase-status { text-align: center; padding: 10px; border-radius: 8px; margin-bottom: 15px; font-size: 13px; }
+        .firebase-ok { background: #d4edda; color: #155724; }
+        .firebase-err { background: #f8d7da; color: #721c24; }
 
         @media (max-width: 600px) {
-            h1 {
-                font-size: 1.8em;
-            }
-            
-            .content {
-                padding: 20px 15px;
-            }
-
-            .stat-number {
-                font-size: 2.5em;
-            }
-
-            .phone-group {
-                flex-direction: column;
-            }
-
-            .country-code {
-                width: 100%;
-            }
-
-            .action-buttons {
-                flex-direction: column;
-            }
-
-            .payment-detail {
-                flex-direction: column;
-                align-items: start;
-            }
-
-            .email-address {
-                font-size: 0.9em;
-                padding: 6px 10px;
-                word-break: break-all;
-            }
-
-            .price {
-                font-size: 2em;
-            }
-
-            .payment-section h3 {
-                font-size: 1.2em;
-            }
-
-            .form-section h2 {
-                font-size: 1.5em;
-            }
-
-            .info-text h3 {
-                font-size: 1em;
-            }
-
-            .info-text p {
-                font-size: 0.9em;
-            }
-
-            .payment-value {
-                font-size: 1em;
-            }
-
-            .warning-box p {
-                font-size: 13px;
-            }
+            h1 { font-size: 1.8em; }
+            .content { padding: 20px 15px; }
+            .phone-group { flex-direction: column; }
+            .country-code { width: 100%; }
+            .action-buttons { flex-direction: column; }
+            .payment-detail { flex-direction: column; align-items: start; }
+            .email-address { font-size: 0.9em; padding: 6px 10px; }
+            .price { font-size: 2em; }
+            .payment-section h3 { font-size: 1.2em; }
+            .form-section h2 { font-size: 1.5em; }
+            .info-text p { font-size: 0.9em; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Jimmy & Djelda</h1>
-            <p class="subtitle">Vous invitent à célébrer leur union</p>
+<div class="container">
+    <div class="header">
+        <h1>Jimmy & Djelda</h1>
+        <p class="subtitle">Vous invitent à célébrer leur union</p>
+    </div>
+
+    <div class="content">
+        <div class="info-section">
+            <div class="info-item">
+                <div class="icon">📅</div>
+                <div class="info-text">
+                    <h3>Date</h3>
+                    <p><strong>Samedi 27 juin 2026</strong></p>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="icon">⛪</div>
+                <div class="info-text">
+                    <h3>Cérémonie</h3>
+                    <p><strong>15h00</strong></p>
+                    <p>9977 Boulevard St-Michel, Montréal-Nord, QC</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="icon">🎉</div>
+                <div class="info-text">
+                    <h3>Réception</h3>
+                    <p><strong>17h00</strong></p>
+                    <p>4371 Bd des Grandes-Prairies, Saint-Léonard, QC</p>
+                </div>
+            </div>
         </div>
 
-        <div class="content">
-            <div class="info-section">
-                <div class="info-item">
-                    <div class="icon">📅</div>
-                    <div class="info-text">
-                        <h3>Date</h3>
-                        <p><strong>Samedi 27 juin 2026</strong></p>
+        <div class="payment-section">
+            <h3>💳 Frais de participation</h3>
+            <div class="price-box">
+                <div class="price">100 $ CAD</div>
+                <p style="color:#666;font-weight:bold;">Par personne</p>
+            </div>
+            <div class="payment-info">
+                <div class="payment-detail">
+                    <div class="payment-icon">💵</div>
+                    <div class="payment-text">
+                        <div class="payment-label">Méthode de paiement</div>
+                        <div class="payment-value">Interac / Dépôt direct</div>
                     </div>
                 </div>
-                <div class="info-item">
-                    <div class="icon">⛪</div>
-                    <div class="info-text">
-                        <h3>Cérémonie</h3>
-                        <p><strong>15h00</strong></p>
-                        <p>9977 Boulevard St-Michel, Montréal-Nord, QC</p>
+                <div class="payment-detail">
+                    <div class="payment-icon">📧</div>
+                    <div class="payment-text">
+                        <div class="payment-label">Adresse courriel</div>
+                        <div class="payment-value">
+                            <span class="email-address">jimmymathieu290@gmail.com</span>
+                        </div>
                     </div>
                 </div>
-                <div class="info-item">
-                    <div class="icon">🎉</div>
-                    <div class="info-text">
-                        <h3>Réception</h3>
-                        <p><strong>17h00</strong></p>
-                        <p>4371 Bd des Grandes-Prairies, Saint-Léonard, QC</p>
+                <div class="payment-detail">
+                    <div class="payment-icon">💰</div>
+                    <div class="payment-text">
+                        <div class="payment-label">Montant fixe</div>
+                        <div class="payment-value">100$ CAD × nombre de personnes</div>
                     </div>
                 </div>
             </div>
-
-            <div class="payment-section">
-                <h3>💳 Frais de participation</h3>
-                
-                <div class="price-box">
-                    <div class="price">100 $ CAD</div>
-                    <p style="color: #666; font-weight: bold;">Par personne</p>
-                </div>
-
-                <div class="payment-info">
-                    <div class="payment-detail">
-                        <div class="payment-icon">💵</div>
-                        <div class="payment-text">
-                            <div class="payment-label">Méthode de paiement</div>
-                            <div class="payment-value">Interac / Dépôt direct</div>
-                        </div>
-                    </div>
-
-                    <div class="payment-detail">
-                        <div class="payment-icon">📧</div>
-                        <div class="payment-text">
-                            <div class="payment-label">Adresse courriel</div>
-                            <div class="payment-value">
-                                <span class="email-address">jimmymathieu290@gmail.com</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="payment-detail">
-                        <div class="payment-icon">💰</div>
-                        <div class="payment-text">
-                            <div class="payment-label">Montant fixe</div>
-                            <div class="payment-value">100$ CAD × nombre de personnes</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="warning-box">
-                    <strong>⚠️ Paiement requis avant confirmation</strong>
-                    <p>Veuillez d'abord effectuer votre paiement par Interac ou dépôt direct à l'adresse ci-dessus, puis remplir le formulaire de confirmation ci-dessous. Votre présence sera confirmée après vérification du paiement.</p>
-                </div>
+            <div class="warning-box">
+                <strong>⚠️ Paiement requis avant confirmation</strong>
+                <p>Veuillez d'abord effectuer votre paiement, puis remplir le formulaire ci-dessous. Votre présence sera confirmée après vérification du paiement.</p>
             </div>
+        </div>
 
-            <div class="form-section">
-                <h2>✨ Confirmer votre présence</h2>
-                <p style="text-align: center; color: #666; margin-bottom: 20px;">
-                    Remplissez ce formulaire après avoir envoyé votre paiement
-                </p>
-                <form id="confirmationForm">
-                    <div class="form-group">
-                        <label for="nom">Nom complet *</label>
-                        <input type="text" id="nom" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Courriel *</label>
-                        <input type="email" id="email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="phone">Numéro de téléphone *</label>
-                        <div class="phone-group">
-                            <select id="countryCode" class="country-code" required>
-                                <option value="+1">🇨🇦 +1 (Canada)</option>
-                                <option value="+1">🇺🇸 +1 (USA)</option>
-                                <option value="+509">🇭🇹 +509 (Haïti)</option>
-                                <option value="+33">🇫🇷 +33 (France)</option>
-                                <option value="+44">🇬🇧 +44 (UK)</option>
-                                <option value="+49">🇩🇪 +49 (Allemagne)</option>
-                                <option value="+39">🇮🇹 +39 (Italie)</option>
-                                <option value="+34">🇪🇸 +34 (Espagne)</option>
-                                <option value="+351">🇵🇹 +351 (Portugal)</option>
-                                <option value="+32">🇧🇪 +32 (Belgique)</option>
-                                <option value="+41">🇨🇭 +41 (Suisse)</option>
-                                <option value="+86">🇨🇳 +86 (Chine)</option>
-                                <option value="+81">🇯🇵 +81 (Japon)</option>
-                                <option value="+82">🇰🇷 +82 (Corée du Sud)</option>
-                                <option value="+91">🇮🇳 +91 (Inde)</option>
-                                <option value="+55">🇧🇷 +55 (Brésil)</option>
-                                <option value="+52">🇲🇽 +52 (Mexique)</option>
-                                <option value="+27">🇿🇦 +27 (Afrique du Sud)</option>
-                                <option value="+234">🇳🇬 +234 (Nigeria)</option>
-                                <option value="+254">🇰🇪 +254 (Kenya)</option>
-                                <option value="+213">🇩🇿 +213 (Algérie)</option>
-                                <option value="+212">🇲🇦 +212 (Maroc)</option>
-                                <option value="+216">🇹🇳 +216 (Tunisie)</option>
-                                <option value="+20">🇪🇬 +20 (Égypte)</option>
-                                <option value="+61">🇦🇺 +61 (Australie)</option>
-                                <option value="+64">🇳🇿 +64 (Nouvelle-Zélande)</option>
-                            </select>
-                            <input type="tel" id="phone" class="phone-number" placeholder="123-456-7890" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="nombre">Nombre de personnes *</label>
-                        <input type="number" id="nombre" min="1" value="1" required>
-                    </div>
-                    
-                    <button type="submit" class="button">Soumettre ma demande de confirmation</button>
-                </form>
-                <div id="successMessage" class="success-message">
-                    ✓ Merci ! Votre demande a été soumise. Elle sera confirmée après vérification de votre paiement.
+        <div class="form-section">
+            <h2>✨ Confirmer votre présence</h2>
+            <div id="firebaseStatus" class="firebase-status firebase-ok">🔥 Connecté à la base de données</div>
+            <p style="text-align:center;color:#666;margin-bottom:20px;">Remplissez ce formulaire après avoir envoyé votre paiement</p>
+            <form id="confirmationForm">
+                <div class="form-group">
+                    <label for="nom">Nom complet *</label>
+                    <input type="text" id="nom" required>
                 </div>
+                <div class="form-group">
+                    <label for="email">Courriel *</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Numéro de téléphone *</label>
+                    <div class="phone-group">
+                        <select id="countryCode" class="country-code" required>
+                            <option value="+1">🇨🇦 +1 (Canada)</option>
+                            <option value="+1">🇺🇸 +1 (USA)</option>
+                            <option value="+509">🇭🇹 +509 (Haïti)</option>
+                            <option value="+33">🇫🇷 +33 (France)</option>
+                            <option value="+44">🇬🇧 +44 (UK)</option>
+                            <option value="+49">🇩🇪 +49 (Allemagne)</option>
+                            <option value="+39">🇮🇹 +39 (Italie)</option>
+                            <option value="+34">🇪🇸 +34 (Espagne)</option>
+                            <option value="+351">🇵🇹 +351 (Portugal)</option>
+                            <option value="+32">🇧🇪 +32 (Belgique)</option>
+                            <option value="+41">🇨🇭 +41 (Suisse)</option>
+                            <option value="+86">🇨🇳 +86 (Chine)</option>
+                            <option value="+81">🇯🇵 +81 (Japon)</option>
+                            <option value="+82">🇰🇷 +82 (Corée du Sud)</option>
+                            <option value="+91">🇮🇳 +91 (Inde)</option>
+                            <option value="+55">🇧🇷 +55 (Brésil)</option>
+                            <option value="+52">🇲🇽 +52 (Mexique)</option>
+                            <option value="+27">🇿🇦 +27 (Afrique du Sud)</option>
+                            <option value="+234">🇳🇬 +234 (Nigeria)</option>
+                            <option value="+254">🇰🇪 +254 (Kenya)</option>
+                            <option value="+213">🇩🇿 +213 (Algérie)</option>
+                            <option value="+212">🇲🇦 +212 (Maroc)</option>
+                            <option value="+216">🇹🇳 +216 (Tunisie)</option>
+                            <option value="+20">🇪🇬 +20 (Égypte)</option>
+                            <option value="+61">🇦🇺 +61 (Australie)</option>
+                            <option value="+64">🇳🇿 +64 (Nouvelle-Zélande)</option>
+                        </select>
+                        <input type="tel" id="phone" class="phone-number" placeholder="123-456-7890" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="nombre">Nombre de personnes *</label>
+                    <input type="number" id="nombre" min="1" value="1" required>
+                </div>
+                <button type="submit" class="button" id="submitBtn">Soumettre ma demande</button>
+            </form>
+            <div id="successMessage" class="success-message">
+                ✓ Merci ! Votre demande a été soumise. Elle sera confirmée après vérification de votre paiement.
             </div>
+        </div>
 
-            <div id="adminSection" style="display: none;">
-                <div class="admin-section">
-                    <h2>👥 Tableau de bord administrateur</h2>
-                    
-                    <div class="stats-grid">
-                        <div class="stat-box">
-                            <div class="stat-box-number" id="totalPending">0</div>
-                            <div class="stat-box-label">En attente</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="stat-box-number" id="totalApproved">0</div>
-                            <div class="stat-box-label">Approuvés</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="stat-box-number" id="totalGuests">0</div>
-                            <div class="stat-box-label">Total personnes</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="stat-box-number" id="totalRevenue">0$</div>
-                            <div class="stat-box-label">Revenus attendus</div>
-                        </div>
+        <div id="adminSection" style="display:none;">
+            <div class="admin-section">
+                <h2>👥 Tableau de bord</h2>
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <div class="stat-box-number" id="totalPending">0</div>
+                        <div class="stat-box-label">En attente</div>
                     </div>
-
-                    <div class="guest-list" id="guestList">
-                        <p style="color: #666; text-align: center;">Aucune demande pour le moment</p>
+                    <div class="stat-box">
+                        <div class="stat-box-number" id="totalApproved">0</div>
+                        <div class="stat-box-label">Approuvés</div>
                     </div>
+                    <div class="stat-box">
+                        <div class="stat-box-number" id="totalGuests">0</div>
+                        <div class="stat-box-label">Total personnes</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-box-number" id="totalRevenue">0$</div>
+                        <div class="stat-box-label">Revenus attendus</div>
+                    </div>
+                </div>
+                <div class="guest-list" id="guestList">
+                    <p style="color:#666;text-align:center;">Chargement...</p>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <script>
-        const ADMIN_PASSWORD = "family2026";
-        let isAdmin = false;
-        let guests = [];
+<!-- Firebase SDK -->
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { getDatabase, ref, push, onValue, update, remove } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 
-        function loadData() {
-            const saved = localStorage.getItem('weddingGuests');
-            if (saved) {
-                guests = JSON.parse(saved);
-                updateStats();
-            }
+    const firebaseConfig = {
+        apiKey: "AIzaSyC7n3q-jNsd-zqgcEb0i38XMYLeQmig_tA",
+        authDomain: "mariage-jimmy-djelda-fe3c9.firebaseapp.com",
+        databaseURL: "https://mariage-jimmy-djelda-fe3c9-default-rtdb.firebaseio.com",
+        projectId: "mariage-jimmy-djelda-fe3c9",
+        storageBucket: "mariage-jimmy-djelda-fe3c9.firebasestorage.app",
+        messagingSenderId: "354493825451",
+        appId: "1:354493825451:web:a02275b000df45379992ee"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+    const guestsRef = ref(db, 'guests');
+
+    const ADMIN_PASSWORD = "family2026";
+    let isAdmin = false;
+    let guestsData = {};
+
+    // Vérifie si admin
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('admin') === ADMIN_PASSWORD) {
+        isAdmin = true;
+        document.getElementById('adminSection').style.display = 'block';
+    }
+
+    // Écoute Firebase en temps réel
+    onValue(guestsRef, (snapshot) => {
+        guestsData = snapshot.val() || {};
+        if (isAdmin) updateAdminUI();
+    }, (error) => {
+        document.getElementById('firebaseStatus').className = 'firebase-status firebase-err';
+        document.getElementById('firebaseStatus').textContent = '⚠️ Erreur de connexion à la base de données';
+    });
+
+    function updateAdminUI() {
+        const list = Object.entries(guestsData);
+        const pending = list.filter(([,g]) => g.status === 'pending');
+        const approved = list.filter(([,g]) => g.status === 'approved');
+        const totalPeople = approved.reduce((s,[,g]) => s + g.nombre, 0);
+
+        document.getElementById('totalPending').textContent = pending.length;
+        document.getElementById('totalApproved').textContent = approved.length;
+        document.getElementById('totalGuests').textContent = totalPeople;
+        document.getElementById('totalRevenue').textContent = (totalPeople * 100) + '$';
+
+        const listDiv = document.getElementById('guestList');
+        if (list.length === 0) {
+            listDiv.innerHTML = '<p style="color:#666;text-align:center;">Aucune demande pour le moment</p>';
+            return;
         }
 
-        function saveData() {
-            localStorage.setItem('weddingGuests', JSON.stringify(guests));
-        }
+        // Trie par date (plus récent en premier)
+        list.sort((a, b) => new Date(b[1].date) - new Date(a[1].date));
 
-        function updateStats() {
-            if (!isAdmin) return;
-
-            const pending = guests.filter(g => g.status === 'pending');
-            const approved = guests.filter(g => g.status === 'approved');
-            const totalPeople = approved.reduce((sum, g) => sum + g.nombre, 0);
-            const revenue = totalPeople * 100;
-
-            document.getElementById('totalPending').textContent = pending.length;
-            document.getElementById('totalApproved').textContent = approved.length;
-            document.getElementById('totalGuests').textContent = totalPeople;
-            document.getElementById('totalRevenue').textContent = revenue + '$';
-
-            updateGuestList();
-        }
-
-        function updateGuestList() {
-            const listDiv = document.getElementById('guestList');
-            
-            if (guests.length === 0) {
-                listDiv.innerHTML = '<p style="color: #666; text-align: center;">Aucune demande pour le moment</p>';
-                return;
-            }
-
-            listDiv.innerHTML = guests.map((guest, index) => `
-                <div class="guest-item ${guest.status}">
-                    <div class="guest-header">
-                        <div>
-                            <span class="guest-name">${guest.nom}</span>
-                            <span class="guest-count">${guest.nombre} ${guest.nombre > 1 ? 'personnes' : 'personne'}</span>
-                        </div>
-                        <span class="guest-status status-${guest.status}">
-                            ${guest.status === 'pending' ? '⏳ EN ATTENTE' : '✅ APPROUVÉ'}
-                        </span>
+        listDiv.innerHTML = list.map(([key, guest]) => `
+            <div class="guest-item ${guest.status}">
+                <div class="guest-header">
+                    <div>
+                        <span class="guest-name">${guest.nom}</span>
+                        <span class="guest-count">${guest.nombre} ${guest.nombre > 1 ? 'personnes' : 'personne'}</span>
                     </div>
-                    <div class="guest-details">
-                        <div class="guest-detail-item">
-                            <span class="guest-detail-icon">📧</span>
-                            <span>${guest.email}</span>
-                        </div>
-                        <div class="guest-detail-item">
-                            <span class="guest-detail-icon">📞</span>
-                            <span>${guest.countryCode} ${guest.phone}</span>
-                        </div>
-                        <div class="guest-detail-item">
-                            <span class="guest-detail-icon">💰</span>
-                            <span>Montant : ${guest.nombre * 100}$ CAD</span>
-                        </div>
-                    </div>
-                    ${guest.status === 'pending' ? `
-                        <div class="action-buttons">
-                            <button class="approve-btn" onclick="approveGuest(${index})">✓ Approuver</button>
-                            <button class="delete-btn" onclick="deleteGuest(${index})">✗ Supprimer</button>
-                        </div>
-                    ` : ''}
+                    <span class="guest-status status-${guest.status}">
+                        ${guest.status === 'pending' ? '⏳ EN ATTENTE' : '✅ APPROUVÉ'}
+                    </span>
                 </div>
-            `).join('');
+                <div class="guest-details">
+                    <div class="guest-detail-item"><span class="guest-detail-icon">📧</span><span>${guest.email}</span></div>
+                    <div class="guest-detail-item"><span class="guest-detail-icon">📞</span><span>${guest.countryCode} ${guest.phone}</span></div>
+                    <div class="guest-detail-item"><span class="guest-detail-icon">💰</span><span>Montant : ${guest.nombre * 100}$ CAD</span></div>
+                    <div class="guest-detail-item"><span class="guest-detail-icon">🕐</span><span>${new Date(guest.date).toLocaleDateString('fr-CA', {year:'numeric',month:'long',day:'numeric',hour:'2-digit',minute:'2-digit'})}</span></div>
+                </div>
+                ${guest.status === 'pending' ? `
+                    <div class="action-buttons">
+                        <button class="approve-btn" onclick="approveGuest('${key}')">✓ Approuver</button>
+                        <button class="delete-btn" onclick="deleteGuest('${key}')">✗ Supprimer</button>
+                    </div>
+                ` : ''}
+            </div>
+        `).join('');
+    }
+
+    window.approveGuest = function(key) {
+        if (confirm('Confirmer que le paiement a été reçu ?')) {
+            update(ref(db, 'guests/' + key), { status: 'approved' });
         }
+    };
 
-        function approveGuest(index) {
-            if (confirm('Confirmer que le paiement a été reçu ?')) {
-                guests[index].status = 'approved';
-                saveData();
-                updateStats();
-            }
+    window.deleteGuest = function(key) {
+        if (confirm('Voulez-vous vraiment supprimer cette demande ?')) {
+            remove(ref(db, 'guests/' + key));
         }
+    };
 
-        function deleteGuest(index) {
-            if (confirm('Êtes-vous sûr de vouloir supprimer cette demande ?')) {
-                guests.splice(index, 1);
-                saveData();
-                updateStats();
-            }
-        }
+    document.getElementById('confirmationForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn = document.getElementById('submitBtn');
+        btn.disabled = true;
+        btn.textContent = 'Envoi en cours...';
 
-        function checkAdmin() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const password = urlParams.get('admin');
-            
-            if (password === ADMIN_PASSWORD) {
-                isAdmin = true;
-                document.getElementById('adminSection').style.display = 'block';
-                updateStats();
-            }
-        }
-
-        document.getElementById('confirmationForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const nom = document.getElementById('nom').value;
-            const email = document.getElementById('email').value;
-            const countryCode = document.getElementById('countryCode').value;
-            const phone = document.getElementById('phone').value;
-            const nombre = parseInt(document.getElementById('nombre').value);
-
-            guests.push({
-                nom: nom,
-                email: email,
-                countryCode: countryCode,
-                phone: phone,
-                nombre: nombre,
+        try {
+            await push(guestsRef, {
+                nom: document.getElementById('nom').value,
+                email: document.getElementById('email').value,
+                countryCode: document.getElementById('countryCode').value,
+                phone: document.getElementById('phone').value,
+                nombre: parseInt(document.getElementById('nombre').value),
                 status: 'pending',
                 date: new Date().toISOString()
             });
 
-            saveData();
-            updateStats();
-
             document.getElementById('successMessage').style.display = 'block';
             this.reset();
-
             setTimeout(() => {
                 document.getElementById('successMessage').style.display = 'none';
             }, 5000);
-        });
+        } catch(err) {
+            alert('Erreur lors de la soumission. Veuillez réessayer.');
+        }
 
-        loadData();
-checkAdmin();
-    </script>
+        btn.disabled = false;
+        btn.textContent = 'Soumettre ma demande';
+    });
+</script>
 </body>
 </html>
